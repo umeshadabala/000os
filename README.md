@@ -47,11 +47,11 @@ There’s no package manager, desktop environment, or extra services — just th
 You can boot the generated ISO on:
 - **QEMU**
   ```bash
-  qemu-system-x86_64 -m 1024 -cdrom 000os.iso -boot d
+  qemu-system-x86_64 -m 1024 -cdrom 000OS.iso -boot d
   ```
 - **VirtualBox**
   - Create a new VM → Type: *Linux (64-bit)*
-  - Attach `000os.iso` as a virtual optical disk
+  - Attach `0000S.iso` as a virtual optical disk
   - Start the VM
 
 ---
