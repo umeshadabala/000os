@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>000OS — Lightweight Linux From Scratch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #121212;
+      --panel-bg: #1e1e1e;
+      --accent-green: #00e676;
+      --accent-blue: #40c4ff;
+      --text-light: #e0e0e0;
+      --text-muted: #7a8a99;
+      --border-radius: 8px;
+      --spacing: 2rem;
+      --font-mono: 'Roboto Mono', monospace;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text-light);
+      font-family: var(--font-mono);
+      line-height: 1.5;
+    }
+    header {
+      text-align: center;
+      background: var(--panel-bg);
+      padding: calc(var(--spacing)*1.5) 1rem var(--spacing);
+      border-bottom: 3px solid var(--accent-blue);
+      box-shadow: 0 0 15px #0009;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0 0 0.2rem 0;
+      color: var(--accent-blue);
+      letter-spacing: 0.05em;
+      font-weight: 700;
+    }
+    header p.lead {
+      margin: 0 auto;
+      max-width: 480px;
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      line-height: 1.45;
+    }
+    main {
+      max-width: 720px;
+      margin: var(--spacing) auto;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing);
+    }
+    section {
+      background: var(--panel-bg);
+      border-radius: var(--border-radius);
+      padding: var(--spacing);
+      box-shadow: inset 0 0 8px #0008;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin: 0 0 1rem 0;
+      color: var(--accent-green);
+      font-weight: 700;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--text-light);
+    }
+    ul {
+      padding-left: 1.4rem;
+      margin: 0 0 1.2rem 0;
+      list-style-type: none;
+    }
+    ul li {
+      position: relative;
+      padding-left: 1.3rem;
+      margin-bottom: 0.7rem;
+      font-size: 1.1rem;
+      color: var(--text-light);
+    }
+    ul li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--accent-green);
+    }
+    code, pre {
+      background: #0f1416;
+      color: #80d8ff;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 1rem;
+    }
+    pre {
+      padding: 1rem;
+      overflow-x: auto;
+      margin-bottom: 1rem;
+    }
+    a.button {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--accent-green), var(--accent-blue));
+      color: var(--panel-bg);
+      text-decoration: none;
+      font-weight: 700;
+      padding: 0.9rem 2rem;
+      border-radius: var(--border-radius);
+      font-size: 1.25rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+      user-select: none;
+      box-shadow: 0 4px 20px #00e676aa;
+    }
+    a.button:hover,
+    a.button:focus {
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+      outline: none;
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px #40c4ffcc;
+    }
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin: 3rem 1rem 2rem 1rem;
+    }
+    @media (max-width: 450px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      a.button {
+        font-size: 1.1rem;
+        padding: 0.75rem 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>000OS</h1>
+    <p class="lead">A lightweight Linux distribution built entirely from scratch — combining the power of the mainline Linux kernel with the simplicity of BusyBox. Fast, minimal, and efficient.</p>
+  </header>
+  
+  <main>
+    <section aria-label="About 000OS">
+      <h2>About 000OS</h2>
+      <p>000OS strips Linux down to its core essentials, booting directly into a clean command-line interface in just seconds. It’s a compact and educational operating system, perfect for learning how Linux works under the hood or running on low-resource machines.</p>
+      <p>Originally developed as a weekend side project, 000OS shows how simple and elegant a modern Linux system can be when built from the ground up.</p>
+    </section>
+
+    <section aria-label="Key Features">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Boots fast straight to a BusyBox shell</li>
+        <li>Minimal and lightweight — ISO under 20 MB</li>
+        <li>Supports both BIOS and UEFI boot modes</li>
+        <li>Runs on x86_64 with just 512 MB RAM</li>
+        <li>Works on virtual machines like QEMU & VirtualBox or physical hardware</li>
+      </ul>
+    </section>
+
+    <section aria-label="Getting Started Instructions">
+      <h2>Get Started</h2>
+      <p>Ready to try 000OS? Download the ISO and launch it directly in your favorite VM or on compatible hardware.</p>
+      <h3>Run with QEMU</h3>
+      <pre>qemu-system-x86_64 -m 1024 -cdrom 000os.iso -boot d</pre>
+      <h3>Run with VirtualBox</h3>
+      <ul>
+        <li>Create a new VM of type “Linux 64-bit”</li>
+        <li>Attach <code>000os.iso</code> as a virtual optical disk</li>
+        <li>Start the VM and explore</li>
+      </ul>
+      <a href="https://github.com/umeshadabala/000OS/releases/download/000OS/000OS.iso" download class="button" aria-label="Download 000OS ISO">Download 000OS ISO</a>
+    </section>
+
+    <section aria-label="Credits and License">
+      <h2>Credits & License</h2>
+      <p>000OS was built on the foundation of open-source powerhouses:</p>
+      <ul>
+        <li><a href="https://github.com/torvalds/linux" target="_blank" rel="noopener">Linux Kernel</a></li>
+        <li><a href="https://busybox.net/" target="_blank" rel="noopener">BusyBox</a></li>
+      </ul>
+      <p>This project is fully open-source and licensed under GPLv2, intended for educational and personal use.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 000OS Project — Built with open source and passion
+  </footer>
+</body>
+</html>
