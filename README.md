@@ -1,7 +1,7 @@
-+--------------------------------------+
-|           000OS v1.0                |
-|     The Lightweight Linux Distro     |
-+--------------------------------------+
++--------------------------------------+ <br>
+|           000OS v1.0                | <br>
+|     The Lightweight Linux Distro     | <br>
++--------------------------------------+ <br>
 
 
 # 🐧 000OS — A Lightweight Linux Distribution
