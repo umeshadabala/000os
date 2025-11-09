@@ -1,0 +1,38 @@
+# Build artifacts
+*.o
+*.ko
+*.mod
+*.mod.c
+*.cmd
+*.d
+*.a
+*.so
+*.out
+*.bin
+*.img
+*.iso
+*.cpio.gz
+*.gz
+*.bz2
+*.xz
+*.zip
+*.tar
+*.tgz
+*.7z
+*.tmp
+*.log
+*.swp
+*.bak
+
+# Kernel build dirs
+linux-torvalds/
+busybox/
+
+# Generated ISO directories
+iso/
+iso-bootable/
+iso-grub/
+
+# Object output
+initramfs/
+workspace/
